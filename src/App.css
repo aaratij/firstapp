@@ -44,3 +44,26 @@
   padding: 20px;
   border-radius: 10px;
 }
+
+/*.nav {
+  margin: 0;
+  padding: 0;
+  background-color: pink;
+  text-align: left;
+}
+.nav-item {
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+}*/
+
+nav {
+    background: #ee9972;
+    padding: 10px;
+}
+nav a {
+    color: #edefee;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 20px;
+}

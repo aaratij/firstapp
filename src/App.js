@@ -1,68 +1,32 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
-import Header from './components/Header.js';
-import Main from './components/Main.js';
-import Sidebar from './components/Sidebar.js'
+import { Routes, Route, Link } from "react-router-dom";
 
-import Trunk from './examples/Trunk.js'
-import Example from './examples/Example.js';
+import HomePage from "./components/HomePage";
+import AboutMe from "./components/AboutMe";
+import Contact from "./components/Contact";
+import Media from "./components/Media";
+import Calculator from "./components/Calculator";
 
-import avatar from "./avatar.png";
-import Card from "./examples/Card.js"
-
-function Logo (props) {
-    const userPic = <img src={avatar}/>
-    return userPic;
-}
-
-function App () {
+function App() {
   return (
     <div className="App">
-        <h1>Task: Add three Card elements</h1>
-        <Card h2="First card's h2" h3="First card's h3" />
-        <Card h2="Second card's h2" h3="Second card's h3" />
-        <Card h2="Third card's h2" h3="Third card's h3" />
-    </div>
-  );
-}
-
-
-function App1() {
-   return (
-    <div>
-        <Header name="AJ" color="purple"/>
-        <Main greet="Howdy"/>
-        <Sidebar greet="Hi" color="green"/>
-        <Sidebar greet="Hey" color="orange"/>
+      <nav className="nav">
+        <Link to="/" className="nav-item">Homepage</Link>
+        <Link to="/about-me" className="nav-item">About me</Link>
+        <Link to="/contact" className="nav-item">Contact</Link>
+        <Link to="/media" className="nav-item">Media</Link>
+        <Link to="/calculator" className="nav-item">Calculator</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={ <HomePage/> }/>
+        <Route path="/about-me" element={ <AboutMe/>}/>
+        <Route path="/contact" element={ <Contact/>}/>
+        <Route path="/media" element={ <Media/>}/>
+        <Route path="/calculator" element={ <Calculator/>}/>
+      </Routes>
     </div>
   );
-}
-
-function App2() {
-  return (
-    <div>
-      <Trunk></Trunk>
-    </div>
-  );
-}
-
-function App3() {
-  const bool = false;
-  const str1 = "String ";
-  return (
-    <div className="App">
-      <Example toggleBoolean={!bool} math={(10 + 20)/3} str={str1 + 'another ' + 'string'}/>
-    </div>
-  );
-}
-
-function App4 () {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <Logo/>
-    </div>
-  )
 }
 
 export default App;
